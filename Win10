@@ -1,0 +1,24 @@
+#if you are reading this, you are cheating
+#ccdc vulnerablity script for ccdc windows desktop hardening practice
+#by Epi
+
+Set-NetFirewallProfile -Enabled False
+
+stop-Service -Name "wuauserv"
+stop-Service -Name "WaaSMedicSvc"
+
+New-LocalUser -Name "Doge" -Description "I am a windows service 4 real" -NoPassword
+
+New-LocalGroup -Name "MemeLord" -Description "Cool kids club. Invite only" 
+
+Add-LocalGroupMember -Group "Administrators" -Member "Doge" 
+
+New-NetFirewallRule -Name "exfiltrate PII" -DisplayName "Ignore me" -Description "how u doin?" -LocalPort 1548 -Protocol TCP -Direction Outbound 
+
+Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
+
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 -Force
+
+sc.exe config mrxsmb10 start= auto
+
+
