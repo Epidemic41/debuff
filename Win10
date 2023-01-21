@@ -2,6 +2,52 @@
 #ccdc vulnerablity script for ccdc windows desktop hardening practice
 #by Epi
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Set-NetFirewallProfile -Enabled False
 
 stop-Service -Name "wuauserv"
@@ -23,7 +69,4 @@ sc.exe config mrxsmb10 start= auto
 
 Set-Itemproperty -path 'HKLM:\Software\Microsoft\Windows\CurrentVersion\policies\system' -Name 'EnableLUA' -value 0
 
-restart-computer
-
-
-
+Restart-Computer
